@@ -1,0 +1,56 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Lookshelf</title>
+
+    <meta name="description" content="Lookshelf" />
+    <meta name="keywords" content="Lookshelf" />
+<%#= stylesheet_link_tag :all %>
+<%#= stylesheet_link_tag 'reset', 'base' %>
+    <%= stylesheet_link_tag 'style' %>
+    <%= javascript_include_tag :defaults %>
+    <%= csrf_meta_tag %>
+  </head>
+
+
+  <body >    
+
+    <div id="wrapper" style="margin-top: 10px;">
+      <div class="topspacer"><img src="images/spacer.gif" alt="" border="0" /></div>
+      <div class="mainblackborder">
+
+        <!-- /middlecontent -->
+
+        <!-- middlecontent -->
+        <div class="middlecontent">
+          <div><%= render 'layouts/user' %></div>
+          <%= render 'layouts/flash', :locals => { :flash => flash } %>
+          <%= yield %>
+        </div>
+        <!-- /middlecontent -->
+        <!-- /middlecontent -->
+        <!-- footer -->
+        <div class="footer">
+          <div class="footerbeforebg"><img src="images/spacer.gif" alt="" border="0" /></div>
+          <div class="footerbg">
+            <div class="footerleft">
+              <div class="footercontent alignleft"> <a class="linkpadding" href="products.html">Products</a>| <a class="linkpadding" href="services.html">Services</a>| <a class="linkpadding" href="about.html">About</a>| <a class="linkpadding" href="contact.html">Contact</a> </div>
+            </div>
+            <div class="footerright">
+              <div class="footercontent alignright">
+
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- /footer -->
+      </div>
+      <div class="footerbottom"><img src="images/spacer.gif" alt="" border="0" /></div>
+    </div>
+  </body>
+</html>
+
+
+
+

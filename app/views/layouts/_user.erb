@@ -1,0 +1,7 @@
+<div class="fontcolor6" style="float:right">
+  <% if current_user %>
+    Hello <%= link_to current_user, "../account_settings" %>, <%= button_to 'logout', current_user, :method=>:delete %>
+  <% else %>
+    Hi stranger, please <%#= link_to 'login!', new_user_path %><%=raw RPXNow.popup_code('login','rpx-now-example', users_url) %>
+  <% end %>
+</div>

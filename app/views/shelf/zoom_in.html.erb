@@ -1,0 +1,15 @@
+<h1>Shelf zoom view with tagging</h1>
+<div class="spacerdiv"> </div>
+<div class="left"><img src="images/spacer.gif" alt="" border="0" /></div>
+
+
+<div class="box">
+  <% if @user.shelf_image.exists? then %>
+    <div style="width: 500px; height:400px;"><%= image_tag @user.shelf_image.url(:small) %></div>
+
+
+  <%else%>
+    <div id="topstory-img"><img src="images/200x150.gif" alt="" style="" /></div>
+  <% end %>
+
+</div> <!-- /box -->

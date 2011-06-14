@@ -1,0 +1,44 @@
+<div >
+  <%= form_for :search, :url => {:action=>"home",:controller=>"users"}, :html => {} do |f| %>
+    <br/>
+    <input type="text" class="searchbox" name="tag" value="" />
+    <input type="image" src="../images/Search-icon2.png" class="searchbox_submit" value="" />
+  <%end%>
+</div>
+<%@users.each do |user|%>
+  <div class="spacerdiv"> </div>
+  <div class="left"><img src="images/spacer.gif" alt="" border="0" /></div>
+
+
+  <div class="box">
+    <% if user.shelf_image.exists? then %>
+      <div id="topstory-img"><%= link_to image_tag(user.shelf_image.url(:small)), :controller => "shelf", :action => 'zoom_in', :id => user %><%#= image_tag user.shelf_image.url(:small) %></div>
+      <div id="topstory-txt">
+        <%= image_tag user.shelf_image.url(:thumb) %>
+
+
+      <%else%>
+        <div id="topstory-img"><img src="images/200x150.gif" alt="" style="" /></div>
+        <div id="topstory-txt">
+          <img src="images/85x63.gif" alt="" style="" />
+        <% end %>
+
+
+        <p id="topstory-info">Shelf name: <strong><%=user.shelf_name%></strong> <br/>
+        <p id="topstory-info">Shelf location: <strong><%=user.shelf_location%></strong> <br/>
+
+        <p class="nomb">Lorem ipsum dolor sit amet, consectetuer adipiscing est elit.
+          Quisque fringilla. Aenean quam. Donec magna arcu, ornareit
+          amet, gravida eget, elementum ut, sapien. Proin augue velita,
+          at, vulputate ac, dignissim non, nunc. Pellentesque at lectus.
+          ante ipsum primis in faucibus orci luctus et ultrices.</p>
+
+      </div> <!-- /topstory-txt -->
+
+    </div> <!-- /box -->
+
+  <%end%>
+
+  <div class="footerbeforespacer"><img src="images/spacer.gif" alt="" border="0" /></div>
+
+
