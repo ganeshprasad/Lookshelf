@@ -41,7 +41,7 @@ module Lookshelf
 
     config.after_initialize do # so rake gems:install works
       # use your own (e.g. from account with all features enabled) or the default
-      RPXNow.api_key = (File.exist?('config/rpx_now_api_key') ? File.read('config/rpx_now_api_key').strip : 'dc1ea8b9232b1554a78a99321ebc1f9086df08e7')
+      RPXNow.api_key = (File.exist?('config/rpx_now_api_key') ? File.read('config/rpx_now_api_key').strip : '59231eb225651b0eabb453aed4c0f715eeec3163')
     end
   end
 end
