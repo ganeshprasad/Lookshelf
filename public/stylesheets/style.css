@@ -85,7 +85,9 @@ form{ margin: 0px; padding: 0px;}
 
 .redboxafter, blueboxafter { float:left; width: 26px; }
 
-.redbox { float:left; background-color: #2B1117; border: 1px solid #491116; width: 250px; min-height: 96px; }
+.redbox {
+        margin-left: 10px;
+        float:left; background-color: #2B1117; border: 1px solid #491116; width: 450px; min-height: 150px; }
 .redbox_con{ clear:both; padding-left:15px; padding-right:15px; padding-top:15px; padding-bottom:15px; text-align:left; line-height: 160%; color: #FD030C; font-family: Arial, Verdana, Tahoma; font-size: 11px; text-decoration: none; }
 .redbox_con p{ line-height: 160%; color: #FD030C; font-family: Arial, Verdana, Tahoma; font-size: 11px; text-decoration: none; padding: 0px; margin: 0px; }
 .redbox_con a{ color: #FFFFCC; text-decoration: none; }
@@ -97,7 +99,9 @@ form{ margin: 0px; padding: 0px;}
 .redbox_con div.headingcontent { color:#E7BFC1; font-weight: bold; padding-bottom: 8px; }
 
 
-.bluebox { float:left; background-color: #13121F; border: 1px solid #14143D; width: 250px; min-height: 96px; }
+.bluebox {
+        margin-left: 10px;
+        float:left; background-color: #13121F; border: 1px solid #14143D; width: 450px; min-height: 150px; }
 .bluebox_con{ clear:both; padding-left:15px; padding-right:15px; padding-top:15px; padding-bottom:15px; text-align:left; line-height: 160%; color: #4047FB; font-family: Arial, Verdana, Tahoma; font-size: 11px; text-decoration: none; }
 .bluebox_con p{ line-height: 160%; color: #4047FB; font-family: Arial, Verdana, Tahoma; font-size: 11px; text-decoration: none; padding: 0px; margin: 0px; }
 .bluebox_con a{ color: #FFFFCC; text-decoration: none; }
@@ -357,6 +361,95 @@ button.regular, .buttons a.regular{
     border:1px solid #6299c5;
     color:#fff;
 }
+
+.blueButton {
+    background: none repeat scroll 0 0 #0063A6;
+    border: 0 none;
+    border-radius: 5px 5px 5px 5px;
+    color: #FFFFFF;
+    cursor: pointer;
+    float: right;
+    font-size: 14px;
+    font-weight: bold;
+    height: 30px;
+    margin-right: 50px;
+    padding: 5px;
+    text-decoration: none;
+}
+
+.redButton {
+    background: none repeat scroll 0 0 #FD030C;
+    border: 0 none;
+    border-radius: 5px 5px 5px 5px;
+    color: #FFFFFF;
+    cursor: pointer;
+    float: right;
+    font-size: 14px;
+    font-weight: bold;
+    height: 30px;
+   margin-right: 50px;
+    padding: 5px;
+    text-decoration: none;
+}
+
+.greyButton {
+    background: none repeat scroll 0 0 #6E6E6E;
+    border: 0 none;
+    border-radius: 5px 5px 5px 5px;
+    color: #FFFFFF;
+    cursor: pointer;
+    float: right;
+    font-size: 14px;
+    font-weight: bold;
+    height: 30px;
+    margin-right: 50px;
+    padding: 5px;
+    text-decoration: none;
+}
+
+.greenButton {
+    background: none repeat scroll 0 0 #01DF3A;
+    border: 0 none;
+    border-radius: 5px 5px 5px 5px;
+    color: #FFFFFF;
+    cursor: pointer;
+    float: right;
+    font-size: 14px;
+    font-weight: bold;
+    height: 30px;
+    margin-right: 50px;
+    padding: 5px;
+    text-decoration: none;
+}
+
+
+.greybox {
+        margin-left: 10px;
+        float:left; background-color: #F2F2F2; border: 1px solid #2E2E2E; width: 450px; min-height: 150px; }
+.greybox_con{ clear:both; padding-left:15px; padding-right:15px; padding-top:15px; padding-bottom:15px; text-align:left; line-height: 160%; color: #000000; font-family: Arial, Verdana, Tahoma; font-size: 11px; text-decoration: none; }
+.greybox_con p{ line-height: 160%; color: #FD030C; font-family: Arial, Verdana, Tahoma; font-size: 11px; text-decoration: none; padding: 0px; margin: 0px; }
+.greybox_con a{ color: #FFFFCC; text-decoration: none; }
+.greybox_con a:hover{ text-decoration: underline; }
+.greybox_con ol{ line-height:160%; }
+.greybox_con ol li{ margin-left:15px; margin-top:5px !important; margin-top:5px; margin-bottom:10px !important; margin-bottom:10px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 10px; }
+.greybox_con ul{ line-height:130%; list-style-type:none; }
+.greybox_con ul li{ background-image: url(../images/list_arrow_y.gif); background-position: 0 5px; background-repeat: no-repeat; margin-left:-15px; margin-top:-5px !important; margin-top:-15px; margin-bottom:10px !important; margin-bottom:20px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 18px; }
+.greybox_con div.headingcontent { color:#000000; font-weight: bold; padding-bottom: 8px; }
+
+
+.greenbox {
+        margin-left: 10px;
+        float:left; background-color: #81F781; border: 1px solid #298A08; width: 450px; min-height: 150px; }
+.greenbox_con{ clear:both; padding-left:15px; padding-right:15px; padding-top:15px; padding-bottom:15px; text-align:left; line-height: 160%; color: #000000; font-family: Arial, Verdana, Tahoma; font-size: 11px; text-decoration: none; }
+.greenbox_con p{ line-height: 160%; color: #FD030C; font-family: Arial, Verdana, Tahoma; font-size: 11px; text-decoration: none; padding: 0px; margin: 0px; }
+.greenbox_con a{ color: #FFFFCC; text-decoration: none; }
+.greenbox_con a:hover{ text-decoration: underline; }
+.greenbox_con ol{ line-height:160%; }
+.greenbox_con ol li{ margin-left:15px; margin-top:5px !important; margin-top:5px; margin-bottom:10px !important; margin-bottom:10px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 10px; }
+.greenbox_con ul{ line-height:130%; list-style-type:none; }
+.greenbox_con ul li{ background-image: url(../images/list_arrow_y.gif); background-position: 0 5px; background-repeat: no-repeat; margin-left:-15px; margin-top:-5px !important; margin-top:-15px; margin-bottom:10px !important; margin-bottom:20px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 18px; }
+.greenbox_con div.headingcontent { color:#000000; font-weight: bold; padding-bottom: 8px; }
+
 
 
 

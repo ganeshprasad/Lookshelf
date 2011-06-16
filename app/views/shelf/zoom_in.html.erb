@@ -1,15 +1,200 @@
+<style type="text/css">
+
+  div.photo-container {
+    float: left ;
+    margin-right: 10px ;
+  }
+
+</style>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.1/jquery.js"></script>
+<%= javascript_include_tag "phototagger.jquery" %>
+<script type="text/javascript">
+
+  // When the DOM is ready, initialize the scripts.
+  jQuery(function( $ ){
+
+    // Set up the photo tagger.
+    $( "div.photo-container" ).photoTagger({
+
+      // The API urls.
+      loadURL: "../load_tags",
+      saveURL: "../save_tag",
+      deleteURL: "../delete_tag",
+
+      // Default to turned on.
+      // isTagCreationEnabled: false,
+
+      // This will allow us to clean the response from
+      // a ColdFusion server (it will convert the
+      // uppercase keys to lowercase keys expected by
+      // the photoTagger plugin.
+      cleanAJAXResponse: function( apiAction, response ){
+        // Check to see if this it the load.
+        if (apiAction == "load"){
+
+          // Loop over response array.
+          $.each(
+          response,
+          function( index, tagData ){
+            // Translate the ColdFusion keys
+            // to lowercase. This will create
+            // dupliate keys, but it doesn't
+            // matter for our use-case.
+            $.each(
+            tagData,
+            function( key, value ){
+              tagData[ key.toLowerCase() ] = value;
+            }
+          );
+
+          }
+        );
+
+        }
+
+        // Return cleaned response.
+        return( response );
+      }
+    });
+				
+		
+
+
+    // Hook up the enable create links.
+    $( "a.enable-create" ).click(
+    function( event ){
+      // Prevent relocation.
+      event.preventDefault();
+
+      // Get the container and enable the tag
+      // creation on it.
+      $( this ).prevAll( "div.photo-container" )
+      .photoTagger( "enableTagCreation" )
+      ;
+    }
+  );
+
+
+    // Hook up the disabled create links.
+    $( "a.disable-create" ).click(
+    function( event ){
+      // Prevent relocation.
+      event.preventDefault();
+
+      // Get the container and enable the tag
+      // creation on it.
+      $( this ).prevAll( "div.photo-container" )
+      .photoTagger( "disableTagCreation" )
+      ;
+    }
+  );
+
+
+    // Hook up the enable delete links.
+    $( "a.enable-delete" ).click(
+    function( event ){
+      // Prevent relocation.
+      event.preventDefault();
+
+      // Get the container and enable the tag
+      // deletion on it.
+      $( this ).prevAll( "div.photo-container" )
+      .photoTagger( "enableTagDeletion" )
+      ;
+    }
+  );
+
+
+    // Hook up the disabled delete links.
+    $( "a.disable-delete" ).click(
+    function( event ){
+      // Prevent relocation.
+      event.preventDefault();
+
+      // Get the container and disabled the tag
+      // deletion on it.
+      $( this ).prevAll( "div.photo-container" )
+      .photoTagger( "disableTagDeletion" )
+      ;
+    }
+  );
+
+  });
+
+</script>
+<h1>
+  Shelf zoom view with tagging
+</h1>
+
+
+<div class="photo-column">
+
+  <div class="photo-container">
+    <!--<img
+      id="<%#=@user.id%>"
+      src="/system/shelf_images/2/small/MC 85312251 1.jpg?1308063155"
+      width="520"
+      height="347"
+      alt="Sexy woman used for demo."
+      />-->
+    <% if @user.shelf_image.exists? then %>
+      <%= image_tag @user.shelf_image.url(:small), :id => @user.id %>
+
+
+    <%else%>
+      <img src="images/200x150.gif" alt="" style="" />
+    <% end %>
+
+
+  </div>
+
+  <!-- These will toggle the tag ceation. -->
+  <a href="#" class="enable-create">Enable Create</a>
+  &nbsp;|&nbsp;
+  <a href="#" class="disable-create">Disable Create</a>
+
+  <br />
+  <br />
+
+  <!-- These will toggle the tag deletiong. -->
+
+  <a href="#" class="enable-delete">Enable Delete</a>
+  &nbsp;|&nbsp;
+  <a href="#" class="disable-delete">Disable Delete</a>
+
+</div>
+<div>
+  <%= form_for :search, :url => search_tags_url, :html => {} do |f| %>
+    <br/>
+    <input type="text" class="searchbox" name="tag" value="" />
+    <!--<input type="image" src="../images/Search-icon2.png" class="searchbox_submit" value="" />-->
+    <%= f.submit "Request Book" %>
+  <%end%>
+</div>
+
+
+
+
+
+
+
+
+
+
+<!--
+
 <h1>Shelf zoom view with tagging</h1>
 <div class="spacerdiv"> </div>
 <div class="left"><img src="images/spacer.gif" alt="" border="0" /></div>
 
 
 <div class="box">
-  <% if @user.shelf_image.exists? then %>
-    <div style="width: 500px; height:400px;"><%= image_tag @user.shelf_image.url(:small) %></div>
+<%# if @user.shelf_image.exists? then %>
+    <div style="width: 500px; height:400px;"><%#= image_tag @user.shelf_image.url(:small) %></div>
 
 
-  <%else%>
+<%#else%>
     <div id="topstory-img"><img src="images/200x150.gif" alt="" style="" /></div>
-  <% end %>
+<%# end %>
 
-</div> <!-- /box -->
+</div>--> <!-- /box -->

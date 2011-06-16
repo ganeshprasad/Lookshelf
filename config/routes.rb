@@ -3,10 +3,19 @@ Lookshelf::Application.routes.draw do
  #
  #  get "shelf/zoom_in"
 
-  resources :tags
+  resources :tags do
+    collection do
+      post "search"
+    end
+  end
 
   match "account_settings" => "users#account_settings"
   match "zoom_in/:id" => "shelf#zoom_in", :as => "zoom_in"
+  match "load_tags" => "tags#load_tags"
+  match "save_tag" => "tags#save_tag"
+  match "delete_tag" => "tags#delete_tag"
+  match "borrower_page" => "shelf#borrower_page"
+  match "sender_page" => "shelf#sender_page"
 
   root :to => "users#home"
   resources :users

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110614060030) do
+ActiveRecord::Schema.define(:version => 20110615054126) do
 
   create_table "tags", :force => true do |t|
     t.string   "subject"
@@ -20,11 +20,15 @@ ActiveRecord::Schema.define(:version => 20110614060030) do
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "y"
+    t.integer  "width"
+    t.integer  "height"
+    t.integer  "x"
   end
 
   create_table "users", :force => true do |t|
-    t.string   "name",                       :default => "", :null => false
-    t.string   "identifier",                 :default => "", :null => false
+    t.string   "name",                       :null => false
+    t.string   "identifier",                 :null => false
     t.string   "email"
     t.datetime "created_at"
     t.datetime "updated_at"

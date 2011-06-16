@@ -2,7 +2,7 @@ source 'http://rubygems.org'
 
 gem 'rails', '3.0.7'
 
-gem 'mysql'
+gem 'pg'
 gem 'rpx_now'
 gem 'meta_search'
 gem "paperclip", "~> 2.3"

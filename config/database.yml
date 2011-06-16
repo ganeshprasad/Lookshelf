@@ -2,7 +2,7 @@ development:
   adapter: mysql
   database: lookshelf_development
   username: root
-  password: 
+  password: root
   host: localhost
   pool: 5
   timeout: 5000
