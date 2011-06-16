@@ -2,7 +2,7 @@ source 'http://rubygems.org'
 
 gem 'rails', '3.0.7'
 
-gem 'pg'
+gem 'sqlite3-ruby', :require => 'sqlite3'
 gem 'rpx_now'
 gem 'meta_search'
 gem "paperclip", "~> 2.3"
