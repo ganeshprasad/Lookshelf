@@ -127,7 +127,7 @@
 </h1>
 
 
-<div class="photo-column">
+<div class="photo-column" style="float:left;">
 
   <div class="photo-container">
     <!--<img
@@ -149,24 +149,27 @@
   </div>
 
   <!-- These will toggle the tag ceation. -->
-  <a href="#" class="enable-create">Enable Create</a>
+  <a href="#" class="enable-create">Enable Tagging</a>
   &nbsp;|&nbsp;
-  <a href="#" class="disable-create">Disable Create</a>
+  <a href="#" class="disable-create">Disable Tagging</a>
 
   <br />
   <br />
 
   <!-- These will toggle the tag deletiong. -->
 
-  <a href="#" class="enable-delete">Enable Delete</a>
+  <a href="#" class="enable-delete">Enable Tagging</a>
   &nbsp;|&nbsp;
-  <a href="#" class="disable-delete">Disable Delete</a>
+  <a href="#" class="disable-delete">Disable Tagging</a>
 
 </div>
-<div>
-  <%= form_for :search, :url => search_tags_url, :html => {} do |f| %>
+<div class="contentsep"><img src="images/spacer.gif" alt="" border="0" /></div>
+
+<div style="float:left;">
+  <%= form_for :search, :url => request_book_tags_url, :html => {:style => "float:left"} do |f| %>
     <br/>
-    <input type="text" class="searchbox" name="tag" value="" />
+    <input type="text" name="tag" value="" />
+    <%=f.hidden_field :user_id, :value => @user.id%>
     <!--<input type="image" src="../images/Search-icon2.png" class="searchbox_submit" value="" />-->
     <%= f.submit "Request Book" %>
   <%end%>

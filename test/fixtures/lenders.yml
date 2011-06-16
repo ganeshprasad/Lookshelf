@@ -1,0 +1,19 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  lender_id: 1
+  borrower_id: 1
+  status: MyString
+  tag_id: 1
+  date_of_request: 2011-06-16
+  estimated_delivery: 2011-06-16
+  return_date: 2011-06-16
+
+two:
+  lender_id: 1
+  borrower_id: 1
+  status: MyString
+  tag_id: 1
+  date_of_request: 2011-06-16
+  estimated_delivery: 2011-06-16
+  return_date: 2011-06-16

@@ -16,30 +16,38 @@ class UsersController < ApplicationController
   end
 
   def create
+    
     if data = RPXNow.user_data(params[:token])
+      
       data = {:name => data[:username], :email => data[:email], :identifier => data[:identifier]}
       self.current_user = User.find_by_identifier(data[:identifier]) || User.create!(data)
       redirect_to '/'
     else
+
       flash[:error] = :default
       redirect_to :action => :new
     end
   end
 
   def destroy
+    #logger.info(session)
     self.current_user = nil
+#    @current_user = nil
+#    session.delete(:user_id)
+#    session.delete(:session_id)
+#    logger.info(session)
     redirect_to :action => :new
   end
 
   def home
 
     if params[:tag].blank?
-      @users= User.find(:all, :order => "updated_at desc", :limit => 2)
+      @users= User.find(:all, :order => "updated_at desc", :limit => 5)
     else
-      @users= User.find(:all, :conditions => ["shelf_name LIKE ?", params[:tag]], :order => "updated_at desc", :limit => 2)
+      @users= User.find(:all, :conditions => ["shelf_name LIKE ?", params[:tag]], :order => "updated_at desc", :limit => 5)
 
       if @users.empty?
-        @users= User.find(:all, :order => "updated_at desc", :limit => 2)
+        @users= User.find(:all, :order => "updated_at desc", :limit => 5)
       end
       
     end

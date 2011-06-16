@@ -10,7 +10,19 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110615054126) do
+ActiveRecord::Schema.define(:version => 20110616100823) do
+
+  create_table "lenders", :force => true do |t|
+    t.integer  "lender_id"
+    t.integer  "borrower_id"
+    t.string   "status"
+    t.integer  "tag_id"
+    t.date     "date_of_request"
+    t.date     "estimated_delivery"
+    t.date     "return_date"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "tags", :force => true do |t|
     t.string   "subject"
@@ -27,8 +39,8 @@ ActiveRecord::Schema.define(:version => 20110615054126) do
   end
 
   create_table "users", :force => true do |t|
-    t.string   "name",                       :null => false
-    t.string   "identifier",                 :null => false
+    t.string   "name",                       :default => "", :null => false
+    t.string   "identifier",                 :default => "", :null => false
     t.string   "email"
     t.datetime "created_at"
     t.datetime "updated_at"

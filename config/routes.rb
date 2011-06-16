@@ -5,7 +5,7 @@ Lookshelf::Application.routes.draw do
 
   resources :tags do
     collection do
-      post "search"
+      post "request_book"
     end
   end
 
