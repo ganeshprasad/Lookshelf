@@ -2,6 +2,7 @@
   <% if current_user %>
     Hello <%= link_to current_user, "../account_settings" %>, <%= button_to 'logout', current_user, :method=>:delete %>
   <% else %>
-    Hi stranger, please <%#= link_to 'login!', new_user_path %><%=raw RPXNow.popup_code('login','rpx-now-example', users_url) %>
+    Hi stranger, please <%#= link_to 'login!', new_user_path %><a class="rpxnow" onclick="return false;"
+href="https://lookshelf.rpxnow.com/openid/v2/signin?token_url=http%3A%2F%2Fquiet-autumn-219.heroku.com%2F"> Sign In </a> <%#=raw RPXNow.popup_code('login','rpx-now-example', users_url) %>
   <% end %>
 </div>
