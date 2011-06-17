@@ -226,23 +226,40 @@ margin:0px;
 position:relative; /*important*/
 }
 
+.textInput2 {
+    background: none repeat scroll 0 0 transparent;
+    border: medium none;
+    color: #000000;
+    height: 30px;
+    /*margin-left: 60px;*/
+    margin-left: 5px;
+    width: 170px;
+}
 #searchwrapper form { display:inline ; }
 
-.searchbox {
- background: url("../images/blank.png") no-repeat scroll right top #FFFFFF;
+/*.searchbox {
+ background: url("../images/tfbg2.gif") no-repeat scroll right top #FFFFFF;
     border: 1px solid #CCCCCC;
     color: gray;
     font-family: Arial,Helvetica,sans-serif;
     margin-left: 60px;
     padding: 5px 30px 5px 0;
     width: 200px;
+}*/
+
+.fieldHolder {
+    background: url("../images/tfbg2.gif") no-repeat scroll 0 0 transparent;
+    margin-top:20px;
+    height: 27px;
+    width: 182px;
+    margin-left:60px;
 }
 
 .searchbox_submit {
  background-color: transparent;
     border: 0 none;
     height: 30px;
-    margin: 0 0 -10px -30px;
+    margin: -30px -20px 0 155px;
     outline: medium none;
     width: 26px;
 }

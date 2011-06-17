@@ -1,8 +1,14 @@
 <div >
   <%= form_for :search, :url => {:action=>"home",:controller=>"users"}, :html => {} do |f| %>
-    <br/>
+  <div class="fieldHolder">
+<!--<input class="textInput2" type="text" name="tag" value="Tags">-->
+<input class="textInput2" type="text" name="tag" />
+<!--<input class="textInput2" type="text" name="tag" onclick="this.value='';" onfocus="this.select()" onblur="this.value=!this.value?'Tags':this.value;" value="Tags" />-->
+<input type="image" src="../images/Search-icon2.png" class="searchbox_submit" value="" onclick="this.value = ''">
+  </div>
+    <!--<br/>
     <input type="text" class="searchbox" name="tag" value="" />
-    <input type="image" src="../images/Search-icon2.png" class="searchbox_submit" value="" />
+    <input type="image" src="../images/Search-icon2.png" class="searchbox_submit" value="" />-->
   <%end%>
 </div>
 <%@users.each do |user|%>
