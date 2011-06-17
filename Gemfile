@@ -8,6 +8,7 @@ gem 'rpx_now'
 gem 'meta_search'
 gem "paperclip", "~> 2.3"
 gem "jquery-rails"
+gem "will_paginate"
 
 group :development, :test do
    #gem 'capybara'   # For integration testing, replaces webrat
