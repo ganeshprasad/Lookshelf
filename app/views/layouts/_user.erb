@@ -1,8 +1,8 @@
-<div class="fontcolor6" style="float:right">
+<div class="loginBox">
   <% if current_user %>
-    Hello <%= link_to current_user, "../account_settings" %>, <%= button_to 'logout', current_user, :method=>:delete %>
+  <div style="float:left;">Hello <%= link_to current_user, "../account_settings" %>, </div><div style="float:right;margin-left:7px;"> <%= button_to 'Sign out', current_user, :method=>:delete, :class => 'greyShadebutton' %></div>
   <% else %>
-    Hi stranger, please <%#= link_to 'login!', new_user_path %> <%=raw RPXNow.popup_code('login','lookshelf', users_url) %>
+    Hi Lookshelf user, please <%#= link_to 'login!', new_user_path %> <%=raw RPXNow.popup_code('Sign in','lookshelf', users_url, :class => 'greyShadebutton') %>
     
   <% end %>
 </div>

@@ -1,4 +1,4 @@
-<div >
+<div  style="width: auto;">
   <%= form_for :search, :url => {:action=>"home",:controller=>"users"}, :html => {} do |f| %>
   <div class="fieldHolder">
 <!--<input class="textInput2" type="text" name="tag" value="Tags">-->
@@ -44,6 +44,10 @@
     </div> <!-- /box -->
 
   <%end%>
+
+    <div class="span-24 align_right">
+	  <%= will_paginate @users %>
+</div>
 
   <div class="footerbeforespacer"><img src="images/spacer.gif" alt="" border="0" /></div>
 

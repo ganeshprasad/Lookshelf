@@ -53,7 +53,7 @@ form{ margin: 0px; padding: 0px;}
 .middlecontent div.middlebox { float:left; width: 556px;}
 .middlecontent div.middleboxafter { float:left; width: 2px;}
 
-.contenttop, .contentmiddle, .contentbottom { float:left; width: 556px; clear:none; }
+.contenttop, .contentmiddle, .contentbottom { float:left; width: 700px; clear:none; }
 
 .middlecontent div.topic { float:left; width: 278px; }
 .topic1_head { float:left; width: 278px; clear:both; }
@@ -83,11 +83,12 @@ form{ margin: 0px; padding: 0px;}
 .boxsep { float:left; width: 258px; height: 20px; }
 .contentsep { float:left; width: 556px; height: 20px; }
 
+.smallcontentsep { float:left; width: 556px; height: 10px; }
+
 .redboxafter, blueboxafter { float:left; width: 26px; }
 
-.redbox {
-        margin-left: 10px;
-        float:left; background-color: #2B1117; border: 1px solid #491116; width: 450px; min-height: 150px; }
+.redbox {        
+        float:right; background-color: #2B1117; border: 1px solid #491116; width: 450px; min-height: 150px; }
 .redbox_con{ clear:both; padding-left:15px; padding-right:15px; padding-top:15px; padding-bottom:15px; text-align:left; line-height: 160%; color: #FD030C; font-family: Arial, Verdana, Tahoma; font-size: 11px; text-decoration: none; }
 .redbox_con p{ line-height: 160%; color: #FD030C; font-family: Arial, Verdana, Tahoma; font-size: 11px; text-decoration: none; padding: 0px; margin: 0px; }
 .redbox_con a{ color: #FFFFCC; text-decoration: none; }
@@ -97,6 +98,8 @@ form{ margin: 0px; padding: 0px;}
 .redbox_con ul{ line-height:130%; list-style-type:none; }
 .redbox_con ul li{ background-image: url(../images/list_arrow_y.gif); background-position: 0 5px; background-repeat: no-repeat; margin-left:-15px; margin-top:-5px !important; margin-top:-15px; margin-bottom:10px !important; margin-bottom:20px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 18px; }
 .redbox_con div.headingcontent { color:#E7BFC1; font-weight: bold; padding-bottom: 8px; }
+
+.datacontent { color:#000000; font-weight: normal; padding-bottom: 8px;font-size:14px;margin-left:110px;width:340px;margin-top:-25px }
 
 
 .bluebox {
@@ -249,7 +252,7 @@ position:relative; /*important*/
 
 .fieldHolder {
     background: url("../images/tfbg2.gif") no-repeat scroll 0 0 transparent;
-    margin-top:20px;
+    margin-top:40px;
     height: 27px;
     width: 182px;
     margin-left:60px;
@@ -258,8 +261,8 @@ position:relative; /*important*/
 .searchbox_submit {
  background-color: transparent;
     border: 0 none;
-    height: 30px;
-    margin: -30px -20px 0 155px;
+    height: 25px;
+    margin: -30px 0 20px 155px;
     outline: medium none;
     width: 26px;
 }
@@ -440,9 +443,8 @@ button.regular, .buttons a.regular{
 }
 
 
-.greybox {
-        margin-left: 10px;
-        float:left; background-color: #F2F2F2; border: 1px solid #2E2E2E; width: 450px; min-height: 150px; }
+.greybox {        
+        float:right; background-color: #F2F2F2; border: 1px solid #2E2E2E; width: 450px; min-height: 150px; }
 .greybox_con{ clear:both; padding-left:15px; padding-right:15px; padding-top:15px; padding-bottom:15px; text-align:left; line-height: 160%; color: #000000; font-family: Arial, Verdana, Tahoma; font-size: 11px; text-decoration: none; }
 .greybox_con p{ line-height: 160%; color: #FD030C; font-family: Arial, Verdana, Tahoma; font-size: 11px; text-decoration: none; padding: 0px; margin: 0px; }
 .greybox_con a{ color: #FFFFCC; text-decoration: none; }
@@ -454,9 +456,8 @@ button.regular, .buttons a.regular{
 .greybox_con div.headingcontent { color:#000000; font-weight: bold; padding-bottom: 8px; }
 
 
-.greenbox {
-        margin-left: 10px;
-        float:left; background-color: #81F781; border: 1px solid #298A08; width: 450px; min-height: 150px; }
+.greenbox {        
+        float:right; background-color: #81F781; border: 1px solid #298A08; width: 450px; min-height: 150px; }
 .greenbox_con{ clear:both; padding-left:15px; padding-right:15px; padding-top:15px; padding-bottom:15px; text-align:left; line-height: 160%; color: #000000; font-family: Arial, Verdana, Tahoma; font-size: 11px; text-decoration: none; }
 .greenbox_con p{ line-height: 160%; color: #FD030C; font-family: Arial, Verdana, Tahoma; font-size: 11px; text-decoration: none; padding: 0px; margin: 0px; }
 .greenbox_con a{ color: #FFFFCC; text-decoration: none; }
@@ -468,5 +469,38 @@ button.regular, .buttons a.regular{
 .greenbox_con div.headingcontent { color:#000000; font-weight: bold; padding-bottom: 8px; }
 
 
+.greyShadebutton
+{
+   font-size:16px;
+   font-family:Arial,sans-serif;
+   height:26px;
+   background-color:#779999;
+   background-image:url(../images/back03.gif);
+   border-style:solid;
+   border-color:#DDDDDD;
+   border-width:1px;
+}
 
+.rpxnow{
+    font-size:16px;
+   font-family:Arial,sans-serif;
+   height:26px;
+   background-color:#779999;
+   background-image:url(../images/back03.gif);
+   border-style:solid;
+   border-color:#DDDDDD;
+   border-width:1px;
+   text-decoration: none;
+   margin-right: 10px;
+   width:50px;
+   padding:2px;
+}
 
+.loginBox{
+        float:right;margin-right:50px;margin-top:10px;font-size:16px;
+        width: auto;
+}
+
+.borrowerImage{
+        float:left;margin-left:90px;width:150px;height:150px;
+}

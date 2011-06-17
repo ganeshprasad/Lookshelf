@@ -19,7 +19,7 @@ class TagsController < ApplicationController
     logger.info(self.current_user.id)
     @book = Tag.find(:first, :conditions => ["title = ? AND user_id = ?",params[:tag], params[:search][:user_id]])
     #already requested then dont create the record again.
-    @lender = Lender.find(:first, :conditions => ["borrower_id = ? AND lender_id = ? AND status = ?",self.current_user.id, params[:search][:user_id],Lender::WAITING ]) || Lender.new(:lender_id => @book.user_id, :borrower_id => self.current_user.id, :date_of_request => Date.today, :status => Lender::WAITING)
+    @lender = Lender.find(:first, :conditions => ["borrower_id = ? AND lender_id = ? AND status = ? AND tag_id = ?",self.current_user.id, params[:search][:user_id],Lender::WAITING, @book.id ]) || Lender.new(:lender_id => @book.user_id, :borrower_id => self.current_user.id, :date_of_request => Date.today, :status => Lender::WAITING, :tag_id => @book.id)
     logger.info(@lender.new_record?)
     @lender.save
     redirect_to :controller => "shelf", :action => "borrower_page"

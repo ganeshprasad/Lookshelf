@@ -12,8 +12,11 @@ class ShelfController < ApplicationController
 #    @received_list = Lender.find(:all, :conditions => ["borrower_id = ? AND status = ?", self.current_user.id, Lender::RECEIVED])
 #    @loaned_out_list = Lender.find(:all, :conditions => ["borrower_id = ? AND status = ?", self.current_user.id, Lender::LOANED_OUT])
    @waiting_list = Lender.where(["borrower_id = ? AND status = ?", self.current_user.id, Lender::WAITING])
+   logger.info(@waiting_list.size)
     @received_list = Lender.where(["borrower_id = ? AND status = ?", self.current_user.id, Lender::RECEIVED])
+    logger.info(@received_list.size)
     @loaned_out_list = Lender.where(["borrower_id = ? AND status = ?", self.current_user.id, Lender::LOANED_OUT])
+    logger.info(@loaned_out_list.size)
 
 
   end

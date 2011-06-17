@@ -36,18 +36,22 @@ class UsersController < ApplicationController
     #    session.delete(:user_id)
     #    session.delete(:session_id)
     #    logger.info(session)
-    redirect_to :action => :new
+    redirect_to root_url
   end
 
   def home
 
     if params[:tag].blank?
-      @users= User.find(:all, :order => "updated_at desc", :limit => 5)
+      #@users = User.paginate :per_page => 5, :page => params[:page], :joins => :tags, :conditions => ['users.shelf_name LIKE ? OR users.shelf_location LIKE ? OR tags.title LIKE ?', "%#{params[:tag]}%", "%#{params[:tag]}%", "%#{params[:tag]}%"], :order => 'updated_at DESC'
+      @users= User.all.paginate :per_page => 5, :page => params[:page], :order => "updated_at desc"
     else
-      @users= User.find(:all, :conditions => ["shelf_name LIKE ?  OR shelf_location LIKE ? ", params[:tag], params[:tag]], :order => "updated_at desc", :limit => 5)
+      @users = User.tag_search(params[:tag], params[:page])
+     # @users = User.all.paginate :per_page => 5, :page => params[:page], :joins => :tags, :conditions => ['users.shelf_name LIKE ? OR users.shelf_location LIKE ? OR tags.title LIKE ?', "%#{params[:tag]}%", "%#{params[:tag]}%", "%#{params[:tag]}%"], :order => 'updated_at DESC'
+    logger.info(@users.size)
+      #@users= User.find(:all, :conditions => ["shelf_name LIKE ?  OR shelf_location LIKE ? ", params[:tag], params[:tag]], :order => "updated_at desc", :limit => 5)
 
       if @users.empty?
-        @users= User.find(:all, :order => "updated_at desc", :limit => 5)
+        @users= User.all.paginate :per_page => 5, :page => params[:page], :order => "updated_at desc"
       end
       
     end
