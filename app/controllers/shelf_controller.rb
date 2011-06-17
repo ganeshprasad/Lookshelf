@@ -1,5 +1,6 @@
 class ShelfController < ApplicationController
    before_filter :is_user_allowed
+   before_filter :is_registered, :only => [:zoom_in]
   
   
   def zoom_in
@@ -21,8 +22,33 @@ class ShelfController < ApplicationController
 
   end
 
-  def sender_page
+  def lender_page
+
+    @request_list = Lender.where(["lender_id = ? AND status = ?", self.current_user.id, Lender::WAITING])
+
+    @sent_list = Lender.where(["lender_id = ? AND status = ?", self.current_user.id, Lender::RECEIVED])
+    @over_due_list  = Lender.where(["lender_id = ? AND status = ?", self.current_user.id, Lender::OVER_DUE])
     
   end
 
+  def accept
+    @lender = Lender.find(params[:id])
+    @lender.update_attribute(:status, Lender::RECEIVED)
+    redirect_to :action => "lender_page"
+  end
+
+
+  def reject
+
+    @lender = Lender.find(params[:id])
+    @lender.update_attribute(:status, Lender::LOANED_OUT)
+    redirect_to :action => "lender_page"
+  end
+
+  def loaned_out
+
+    @lender = Lender.find(params[:id])
+    @lender.update_attribute(:status, Lender::LOANED_OUT)
+    redirect_to :action => "lender_page"
+  end
 end

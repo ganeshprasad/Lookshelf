@@ -28,4 +28,13 @@ class ApplicationController < ActionController::Base
      redirect_to(root_url)
      end
   end
+
+  def is_registered
+    #if logged in user has registered then permit him otherwise redirect to registration page.   
+    if  current_user.shelf_name.nil? #|| current_user.role != "user"
+      flash[:error] = "Please login as registered user."
+     redirect_to("/registration")
+     end
+
+  end
 end

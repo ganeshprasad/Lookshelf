@@ -1,7 +1,9 @@
-<h1 style="width:300px;">Your account settings</h1> 
+<div class="contentsep"><img src="images/spacer.gif" alt="" border="0" /></div>
+<div class="contentsep"><img src="images/spacer.gif" alt="" border="0" /></div>
+<h1 style="width:300px;margin-left:20px;">Your account settings</h1>
 <div class="buttons">
   <button id="submitButton" class="greyButton" style=" float:right; margin-top: -40px; margin-right:350px" onclick="window.location = '/borrower_page'" >Borrower Page</button>
-  <button id="submitButton" class="greyButton" style=" float:right; margin-top: -40px; margin-right:200px" onclick="window.location = '/sender_page'" >Lender Page</button>
+  <button id="submitButton" class="greyButton" style=" float:right; margin-top: -40px; margin-right:200px" onclick="window.location = '/lender_page'" >Lender Page</button>
 
   <!--<a href="/sender_page" class="regular" style="float:right; margin-top: -40px; margin-right:200px">
     <img src="images/textfield_key.png" alt=""/>
@@ -22,4 +24,3 @@
 
 <%= render 'form' %>
 
-<%= link_to 'Back', root_url %>

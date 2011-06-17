@@ -15,7 +15,10 @@ Lookshelf::Application.routes.draw do
   match "save_tag" => "tags#save_tag"
   match "delete_tag" => "tags#delete_tag"
   match "borrower_page" => "shelf#borrower_page"
-  match "sender_page" => "shelf#sender_page"
+  match "lender_page" => "shelf#lender_page"
+  match "accept_request/:id" => "shelf#accept"
+  match "reject_request/:id" => "shelf#reject"
+  match "loaned_out/:id" => "shelf#loaned_out"
 
   root :to => "users#home"
   resources :users

@@ -1,5 +1,10 @@
 class Lender < ActiveRecord::Base
 
+  WAITING = "waiting"
+  RECEIVED = "received"
+  LOANED_OUT = "loaned_out"
+  OVER_DUE = "over_due"
+
   belongs_to :lender, :foreign_key => :lender_id, :class_name => "User"
   belongs_to :borrower, :foreign_key => :borrower_id, :class_name => "User"
   belongs_to :tag, :foreign_key => :tag_id, :class_name => "Tag"
@@ -30,8 +35,5 @@ class Lender < ActiveRecord::Base
     date_of_request + 30.days
   end
 
-  WAITING = "waiting"
-  RECEIVED = "received"
-  LOANED_OUT = "loaned_out"
-  OVER_DUE = "over_due"
+  
 end

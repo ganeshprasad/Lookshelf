@@ -1,3 +1,4 @@
+<div class="contentsep"><img src="images/spacer.gif" alt="" border="0" /></div>
 <div id="account_form">
   <%= form_for @user, :html => { :multipart => true } do |f| %>
     <% if @user.errors.any? %>
@@ -12,8 +13,8 @@
       </div>
     <% end %>
 
-
     <div style="float:left; width: 40%; height:100%;">
+      <h3>Account Details:</h3>
       <div class="field">
         <%= f.label "Name" %><br />
         <%= f.text_field :full_name %>
@@ -38,6 +39,7 @@
         <%= f.label :zip %><br />
         <%= f.text_field :zip %>
       </div>
+      <h3>Shelf Details:</h3>
       <div class="field">
         <%= f.label :shelf_name %><br />
         <%= f.text_field :shelf_name %>
@@ -64,7 +66,7 @@
         <%= f.label "Shelf Image" %><br />
         <%= f.file_field :shelf_image %>
       </div>
-
+<div class="contentsep"><img src="images/spacer.gif" alt="" border="0" /></div>
       <div class="field" style="float:left;width: 100%" >
         <h3>How much information do you want and when?</h3>
         <label>Lookshelf Notifications</label>
@@ -78,8 +80,13 @@
         <%= f.radio_button :event_notification, "false" %> No <br/>
       </div>
     </div>
+  <div class="contentsep"><img src="images/spacer.gif" alt="" border="0" /></div>
     <div class="actions" style="float:left;">
-      <%= f.submit "Update Account",  :class => "regular" %>
+      <%= f.submit "Update Account",  :class => "greyShadebutton" %>
     </div>
+
+<%#= link_to 'Back', root_url, :class => "greyShadebutton" %>
   <% end %>
 </div>
+<div class="contentsep"><img src="images/spacer.gif" alt="" border="0" /></div>
+<div class="contentsep"><img src="images/spacer.gif" alt="" border="0" /></div>

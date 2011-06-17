@@ -2,6 +2,9 @@ class User < ActiveRecord::Base
 
   has_many :tags
 
+  validates :email, :presence => true, :uniqueness => true, :format => { :with =>  /^([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})$/i, :message => "Email must be of valid format."}, :on => :update
+  validates :shelf_name, :presence => true, :on => :update
+  validates :shelf_location, :presence => true, :on => :update
 
 
   def self.tag_search(tag, page)
@@ -21,19 +24,20 @@ class User < ActiveRecord::Base
 
 
 
-   has_attached_file :shelf_image,
-     :styles => {
-       :thumb=> "100x100#",
-       :small  => "400x400>",
-       :profile => "100x100#"}
+  has_attached_file :shelf_image,
+    :styles => {
+    :thumb=> "100x100#",
+    :small  => "400x400>",
+    :profile => "100x100#"}
 
-   has_attached_file :profile_image,
-     :styles => {
-       :thumb=> "100x100#",
-       :small  => "400x400>",
-        :profile => "100x100#"}
+  has_attached_file :profile_image,
+    :styles => {
+    :thumb=> "100x100#",
+    :small  => "400x400>",
+    :profile => "100x100#"}
 
   def to_s
     name
   end
 end
+

@@ -10,6 +10,49 @@ form{ margin: 0px; padding: 0px;}
     position:relative;    
     margin:auto auto;
 }
+
+.field input{
+        padding:5px;
+        margin-top:3px;
+        margin-bottom: 3px;
+}
+
+#notice {
+  color: green;
+}
+
+.field_with_errors {
+  padding: 2px;
+/*  background-color: red;*/
+  display: table;
+}
+
+#error_explanation {
+  width: 450px;
+  border: 2px solid red;
+  padding: 7px;
+  padding-bottom: 0;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+}
+
+#error_explanation h2 {
+  text-align: left;
+  font-weight: bold;
+  padding: 5px 5px 5px 15px;
+  font-size: 12px;
+  margin: -7px;
+  margin-bottom: 0px;
+  background-color: #c00;
+  color: #fff;
+}
+
+#error_explanation ul li {
+  font-size: 12px;
+  color: #000002;
+  list-style: square;
+}
+
 .floatleft{ float:left; }
 .topspacer { float:left; width:886px; height:8px; }
 
@@ -277,7 +320,7 @@ position:relative; /*important*/
 }
 
 #account_form{
-        background-color: #AFAFAF;
+/*        background-color: #AFAFAF;*/
         margin: 20px;
         width : 100%;
         height:100%
@@ -442,6 +485,21 @@ button.regular, .buttons a.regular{
     text-decoration: none;
 }
 
+.orangeButton {
+    background: none repeat scroll 0 0 #FF9933;
+    border: 0 none;
+    border-radius: 5px 5px 5px 5px;
+    color: #FFFFFF;
+    cursor: pointer;
+    float: right;
+    font-size: 14px;
+    font-weight: bold;
+    height: 30px;
+    margin-right: 50px;
+    padding: 5px;
+    text-decoration: none;
+}
+
 
 .greybox {        
         float:right; background-color: #F2F2F2; border: 1px solid #2E2E2E; width: 450px; min-height: 150px; }
@@ -474,6 +532,7 @@ button.regular, .buttons a.regular{
    font-size:16px;
    font-family:Arial,sans-serif;
    height:26px;
+   cursor: pointer;
    background-color:#779999;
    background-image:url(../images/back03.gif);
    border-style:solid;
